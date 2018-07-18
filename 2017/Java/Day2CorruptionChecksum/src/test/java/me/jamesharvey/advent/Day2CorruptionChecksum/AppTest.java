@@ -1,4 +1,4 @@
-package uk.co.geekconsultants.advent.Day2CorruptionChecksum;
+package me.jamesharvey.advent.Day2CorruptionChecksum;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

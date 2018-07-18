@@ -1,8 +1,9 @@
-package uk.co.geekconsultants.advent.Day1InverseCaptcha;
+package me.jamesharvey.advent.Day1InverseCaptcha;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 

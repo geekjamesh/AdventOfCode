@@ -1,4 +1,4 @@
-package uk.co.geekconsultants.advent.Day1InverseCaptcha;
+package me.jamesharvey.advent.Day1InverseCaptcha;
 
 class InverseCaptcha {
 
