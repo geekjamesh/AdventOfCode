@@ -11,7 +11,7 @@ public class App
         try {
         	document = FileUtil.readFile("src/main/resources/input.txt");
         	ChecksumCalculator calculator = new ChecksumCalculator(document);
-        	Integer checksum = calculator.calculate();
+        	Integer checksum = calculator.calculateDifferenceBasedChecksum();
         	System.out.println("Checksum = " + checksum);
 		} catch (IOException e) {
 			System.out.println("Error reading file.");

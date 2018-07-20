@@ -2,6 +2,7 @@ package me.jamesharvey.advent.Day2CorruptionChecksum;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
 import java.util.List;
 
@@ -13,6 +14,12 @@ public class FileUtil {
 		if (StringUtils.isAllBlank(filePath)) {
 			throw new CustomException("Empty file path provided : " + filePath);
 		}
-		return Files.readAllLines(Paths.get(filePath));
+		List<String> fileContent = null;
+		try {
+			fileContent = Files.readAllLines(Paths.get(filePath));
+		} catch (NoSuchFileException e) {
+			throw new CustomException("File not found at path provided : " + filePath);
+		}
+		return fileContent;
 	}
 }

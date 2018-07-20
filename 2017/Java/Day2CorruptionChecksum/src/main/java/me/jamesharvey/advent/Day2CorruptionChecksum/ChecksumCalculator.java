@@ -3,6 +3,8 @@ package me.jamesharvey.advent.Day2CorruptionChecksum;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class ChecksumCalculator {
 	private List<String> document;
 	private Integer checksum;
@@ -15,7 +17,7 @@ public class ChecksumCalculator {
 		this.document = document;
 	}
 	
-	public Integer calculate() throws CustomException {
+	public Integer calculateDifferenceBasedChecksum() throws CustomException {
 		try {
 			checksum = 0;
 			if (document != null && document.size() > 0) {
@@ -35,7 +37,10 @@ public class ChecksumCalculator {
 		return checksum;
 	}
 
-	private int extractRowDifference(String row) throws NumberFormatException {
+	int extractRowDifference(String row) throws NumberFormatException {
+		if (StringUtils.isBlank(row)) {
+			return 0;
+		}
 		Integer min = null;
 		Integer max = null;
 		StringTokenizer columns = new StringTokenizer(row, "\t");
