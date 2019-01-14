@@ -10,9 +10,12 @@ public class App
     	List<String> document = null;
         try {
         	document = FileUtil.readFile("src/main/resources/input.txt");
-        	ChecksumCalculator calculator = new ChecksumCalculator(document);
-        	Integer checksum = calculator.calculateDifferenceBasedChecksum();
-        	System.out.println("Checksum = " + checksum);
+        	ChecksumCalculator calculatorDifference = new ChecksumCalculator(document);
+        	Integer checksum1 = calculatorDifference.calculateDifferenceBasedChecksum();
+        	System.out.println("Checksum 1 = " + checksum1);
+        	ChecksumCalculator calculatorDivision = new ChecksumCalculator(document);
+        	Integer checksum2 = calculatorDivision.calculateDivisionBasedChecksum();
+        	System.out.println("Checksum 2 = " + checksum2);
 		} catch (IOException e) {
 			System.out.println("Error reading file.");
 			e.printStackTrace();
